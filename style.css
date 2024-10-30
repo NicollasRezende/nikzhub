@@ -30,7 +30,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 /* Header */
 #header {
     position: fixed;
@@ -62,7 +61,8 @@ nav {
     top: 0;
     width: 100%;
     z-index: 100;
-    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    transition: background-color 0.4s ease, padding 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 nav ul {
@@ -116,13 +116,17 @@ nav ul li a:hover {
 }
 
 #hero::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.1),
+        transparent 70%
+    );
     animation: background-pulse 6s infinite alternate;
     z-index: 1;
 }
@@ -137,7 +141,6 @@ nav ul li a:hover {
     }
 }
 
-
 #hero h1 {
     font-size: 3.5em;
     margin-bottom: 10px;
@@ -145,7 +148,6 @@ nav ul li a:hover {
     z-index: 2;
     animation: fadeIn 2s ease-in-out forwards;
 }
-
 
 #hero p {
     font-size: 1.2em;
@@ -330,12 +332,12 @@ nav ul li a:hover {
     background-color: var(--background-100);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--primary-100);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 .project-cards .card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px var(--accent-100);
 }
 .project-cards .card h3 {
     font-size: 1.4em;
@@ -479,7 +481,9 @@ footer {
 
 /* Responsividade */
 @media (max-width: 480px) {
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
         font-size: 2em;
     }
 
@@ -505,10 +509,12 @@ footer {
     }
 
     .left {
-        left: 30px;
+        width: 30px;
+        left: 1px;
     }
     .right {
-        right: 30px;
+        width: 30px;
+        right: 1px;
     }
 
     button {
@@ -526,16 +532,16 @@ footer {
         align-items: flex-start;
         position: fixed;
         top: 0;
-        left: -250px;
+        left: -250px; /* Escondido à esquerda */
         width: 250px;
         height: 100vh;
         background-color: var(--primary-100);
         padding-top: 60px;
-        transition: left 0.4s ease;
+        transition: left 0.4s ease; /* Animação de deslizamento */
     }
 
     nav ul.active {
-        left: 0;
+        left: 0; /* Mostra o menu */
     }
 
     nav ul li {
@@ -543,6 +549,7 @@ footer {
         text-align: left;
     }
 
+    /* Mostrar o ícone hamburguer */
     .menu-toggle {
         display: block;
     }
