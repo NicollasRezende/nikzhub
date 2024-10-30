@@ -1,12 +1,12 @@
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({
-        behavior: 'smooth'
+        behavior: 'smooth',
     });
 }
 
 window.addEventListener('scroll', () => {
     const elements = document.querySelectorAll('.animate');
-    elements.forEach(el => {
+    elements.forEach((el) => {
         const position = el.getBoundingClientRect().top;
         if (position < window.innerHeight) {
             el.classList.add('slide-in');
@@ -19,7 +19,7 @@ function scrollProjects(direction) {
     const scrollAmount = direction === 'right' ? 200 : -450;
     container.scrollBy({
         left: scrollAmount,
-        behavior: 'smooth'
+        behavior: 'smooth',
     });
 }
 
@@ -32,7 +32,10 @@ const cardsToShow = 2;
 
 function updateCards() {
     cards.forEach((card, index) => {
-        if (index >= currentCardIndex && index < currentCardIndex + cardsToShow) {
+        if (
+            index >= currentCardIndex &&
+            index < currentCardIndex + cardsToShow
+        ) {
             card.style.display = 'block';
         } else {
             card.style.display = 'none';
@@ -58,4 +61,15 @@ nextButton.addEventListener('click', () => {
 
 function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('active');
+}
+
+function toggleTheme() {
+    const root = document.documentElement;
+    const themeIcon = document.getElementById("theme-icon");
+
+    if (root.classList.toggle("light-theme")) {
+        themeIcon.textContent = "☀️";
+    } else {
+        themeIcon.textContent = "🌙";
+    }
 }
