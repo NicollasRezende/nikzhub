@@ -1,16 +1,35 @@
 :root {
+    --hero-gradient-start: #2c3e50;
+    --hero-gradient-end: #1b2732;
     --primary-100: #2c3e50;
     --primary-200: #3e5871;
     --primary-300: #507192;
     --accent-100: #e74c3c;
     --accent-200: #e74c3c;
     --accent-300: #e74c3c;
-    --background-100: #070a0d;
-    --background-200: #10171e;
-    --background-300: #19242e;
-    --text-100: #fcfcfd;
-    --text-200: #ededf3;
-    --text-300: #dddde9;
+    --background-100: #090d11;
+    --background-200: #121a22;
+    --background-300: #1b2732;
+    --text-100: #fbfbfc;
+    --text-200: #ececf1;
+    --text-300: #dedee6;
+}
+
+.light-theme {
+    --hero-gradient-start: #ff6655;
+    --hero-gradient-end: #ffc5be;
+    --primary-100: #ff6655;
+    --primary-200: #ff8b7c;
+    --primary-300: #ffc5be;
+    --accent-100: #667799;
+    --accent-200: #a6b3c4;
+    --accent-300: #ccd7e4;
+    --background-100: #ffffff;
+    --background-200: #f8f6f6;
+    --background-300: #ede9e9;
+    --text-100: #1a0d0b;
+    --text-200: #3b1d17;
+    --text-300: #5a2e25;
 }
 
 /* Estilos Globais */
@@ -69,6 +88,7 @@ nav ul {
     display: flex;
     list-style-type: none;
     justify-content: space-around;
+    padding-top: 10px;
 }
 
 nav ul li {
@@ -87,7 +107,6 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Menu Toggle para dispositivos menores */
 .menu-toggle {
     display: none;
     font-size: 24px;
@@ -98,11 +117,40 @@ nav ul li a:hover {
     left: 15px;
     z-index: 110;
 }
+
+#theme-toggle {
+    width: 120px;
+    position: relative;
+    left: 15px;
+    background-color: var(--primary-300);
+    color: var(--text-100);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#theme-toggle:hover {
+    background-color: var(--primary-200);
+}
+
+#theme-icon {
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
 /* Hero Section */
 #hero {
-    background: #c70039;
-    background: -webkit-linear-gradient(98deg, #c70039 0%, #900c3f 100%);
-    background: linear-gradient(98deg, #c70039 0%, #900c3f 100%);
+    background: linear-gradient(
+        to right,
+        var(--hero-gradient-start),
+        var(--hero-gradient-end)
+    );
     color: var(--text-100);
     height: 100vh;
     display: flex;
@@ -233,7 +281,7 @@ nav ul li a:hover {
 }
 
 .about-content .about-text strong {
-    color: var(--accent-300);
+    color: var(--accent-100);
     font-weight: bold;
 }
 .about-content .skills {
@@ -255,6 +303,35 @@ nav ul li a:hover {
 .about-content .skills .skill i {
     margin-right: 5px;
 }
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: var(--text-100);
+    background-color: var(--primary-200);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 15px;
+}
+
+.github-btn i {
+    margin-right: 8px;
+    font-size: 1.2em;
+    transition: transform 0.3s;
+}
+
+.github-btn:hover {
+    background-color: var(--accent-100);
+    transform: translateY(-3px);
+}
+
+.github-btn:hover i {
+    transform: scale(1.2);
+}
+
 
 /* Contato */
 #contact {
@@ -480,7 +557,7 @@ footer {
 }
 
 /* Responsividade */
-@media (max-width: 480px) {
+@media (max-width: 750px) {
     h1,
     h2,
     h3 {
@@ -565,5 +642,31 @@ footer {
     /* Mostrar o ícone hamburguer */
     .menu-toggle {
         display: block;
+    }
+
+    #theme-toggle {
+        width: 120px;
+        position: relative;
+        left: 15px;
+        background-color: var(--primary-300);
+        color: var(--text-100);
+        border: none;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    #theme-toggle:hover {
+        background-color: var(--primary-200);
+    }
+    
+    #theme-icon {
+        font-size: 1.2em;
+        transition: color 0.3s ease;
     }
 }
