@@ -478,7 +478,7 @@ footer {
 }
 
 /* Responsividade */
-@media (max-width: 780px) {
+@media (max-width: 480px) {
     h1, h2, h3 {
         font-size: 2em;
     }
