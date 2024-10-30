@@ -480,7 +480,7 @@ footer {
 }
 
 /* Responsividade */
-@media (max-width: 480px) {
+@media (max-width: 750px) {
     h1,
     h2,
     h3 {
@@ -515,6 +515,19 @@ footer {
     .right {
         width: 30px;
         right: 1px;
+    }
+
+    .project-cards .card {
+        flex: 0 0 400px;
+        background-color: var(--background-100);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px var(--primary-100);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-cards .card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 6px 12px var(--accent-100);
     }
 
     button {
