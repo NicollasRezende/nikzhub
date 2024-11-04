@@ -4,15 +4,15 @@
     --primary-100: #2c3e50;
     --primary-200: #3e5871;
     --primary-300: #507192;
-    --accent-100: #e74c3c;
-    --accent-200: #e74c3c;
-    --accent-300: #e74c3c;
-    --background-100: #090d11;
-    --background-200: #121a22;
-    --background-300: #1b2732;
-    --text-100: #fbfbfc;
-    --text-200: #ececf1;
-    --text-300: #dedee6;
+    --accent-100: #c0392b;
+    --accent-200: #c0392b;
+    --accent-300: #c0392b;
+    --background-100: #040608;
+    --background-200: #0d1319;
+    --background-300: #15202a;
+    --text-100: #fdfdfd;
+    --text-200: #f0f0f0;
+    --text-300: #e4e4e4;
 }
 
 .light-theme {
