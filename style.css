@@ -16,20 +16,18 @@
 }
 
 .light-theme {
-    --hero-gradient-start: #ff6655;
-    --hero-gradient-end: #ffc5be;
-    --primary-100: #ff6655;
-    --primary-200: #ff8b7c;
-    --primary-300: #ffc5be;
-    --accent-100: #667799;
-    --accent-200: #a6b3c4;
-    --accent-300: #ccd7e4;
-    --background-100: #ffffff;
-    --background-200: #f8f6f6;
-    --background-300: #ede9e9;
-    --text-100: #1a0d0b;
-    --text-200: #3b1d17;
-    --text-300: #5a2e25;
+    --primary-100: #ffffff;
+    --primary-200: #fff;
+    --primary-300: #fff;
+    --accent-100: #9ad3bc;
+    --accent-200: #9ad3bc;
+    --accent-300: #9ad3bc;
+    --background-100: #fefefe;
+    --background-200: #f1f1f1;
+    --background-300: #e5e5e5;
+    --text-100: #111111;
+    --text-200: #464646;
+    --text-300: #5f5f5f;
 }
 
 /* Estilos Globais */
