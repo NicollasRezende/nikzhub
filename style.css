@@ -198,16 +198,21 @@ nav ul li a:hover {
 }
 
 #hero button {
+    padding: 12px 24px;
+    font-size: 1.2em;
     background-color: var(--accent-100);
-    color: var(--text-100);
     border: none;
-    padding: 10px 20px;
+    color: var(--text-100);
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 2;
+    animation: fadeIn 2s ease-in-out 1s forwards;
+    opacity: 0;
 }
 
 #hero button:hover {
     background-color: var(--accent-200);
+    transform: scale(1.05);
 }
 
 @keyframes background-pulse {
@@ -246,23 +251,6 @@ nav ul li a:hover {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-#hero button {
-    padding: 12px 24px;
-    font-size: 1.2em;
-    background-color: var(--accent-100);
-    border: none;
-    color: var(--text-100);
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    z-index: 2;
-    animation: fadeIn 2s ease-in-out 1s forwards;
-    opacity: 0;
-}
-#hero button:hover {
-    background-color: var(--background-200);
-    transform: scale(1.05);
 }
 
 /* Sobre Mim */
@@ -699,6 +687,26 @@ footer {
     #theme-icon {
         font-size: 1.2em;
         transition: color 0.3s ease;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+
+    #hero .button-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #hero button {
+        width: 100%;
+        padding: 10px;
     }
 }
 
