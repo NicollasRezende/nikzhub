@@ -29,6 +29,7 @@
     --text-200: #464646;
     --text-300: #5f5f5f;
 }
+
 /* Estilos Globais */
 * {
     margin: 0;
@@ -44,6 +45,12 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Header */
@@ -665,5 +672,64 @@ footer {
     #theme-icon {
         font-size: 1.2em;
         transition: color 0.3s ease;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0;
+    }
+}
+
+/* Exemplo de layout flexível */
+.header, .footer {
+    background-color: var(--primary-100);
+    padding: 20px;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: var(--primary-200);
+    padding: 20px;
+}
+
+.content {
+    flex: 3;
+    background-color: var(--primary-300);
+    padding: 20px;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .sidebar, .content {
+        flex: 1;
     }
 }
