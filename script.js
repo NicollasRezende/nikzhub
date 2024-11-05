@@ -4,7 +4,8 @@ function scrollToSection(id) {
     });
 }
 
-window.addEventListener('scroll', () => {
+
+function handleScroll() {
     const elements = document.querySelectorAll('.animate');
     elements.forEach((el) => {
         const position = el.getBoundingClientRect().top;
@@ -12,7 +13,27 @@ window.addEventListener('scroll', () => {
             el.classList.add('slide-in');
         }
     });
-});
+}
+
+
+function debounce(func, wait = 20, immediate = true) {
+    let timeout;
+    return function () {
+        const context = this,
+            args = arguments;
+        const later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+
+window.addEventListener('scroll', debounce(handleScroll));
+
 
 function scrollProjects(direction) {
     const container = document.querySelector('.project-cards');
@@ -23,14 +44,12 @@ function scrollProjects(direction) {
     });
 }
 
-const cards = document.querySelectorAll('.project-cards .card');
-const prevButton = document.getElementById('prevButton');
-const nextButton = document.getElementById('nextButton');
-
-let currentCardIndex = 0;
-const cardsToShow = 2;
 
 function updateCards() {
+    const cards = document.querySelectorAll('.project-cards .card');
+    const cardsToShow = 2;
+    let currentCardIndex = 0;
+
     cards.forEach((card, index) => {
         if (
             index >= currentCardIndex &&
@@ -41,35 +60,40 @@ function updateCards() {
             card.style.display = 'none';
         }
     });
+
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+
+    prevButton.addEventListener('click', () => {
+        if (currentCardIndex > 0) {
+            currentCardIndex -= cardsToShow;
+            updateCards();
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentCardIndex + cardsToShow < cards.length) {
+            currentCardIndex += cardsToShow;
+            updateCards();
+        }
+    });
 }
 
 updateCards();
 
-prevButton.addEventListener('click', () => {
-    if (currentCardIndex > 0) {
-        currentCardIndex -= cardsToShow;
-        updateCards();
-    }
-});
-
-nextButton.addEventListener('click', () => {
-    if (currentCardIndex + cardsToShow < cards.length) {
-        currentCardIndex += cardsToShow;
-        updateCards();
-    }
-});
 
 function toggleMenu() {
     document.querySelector('.nav-links').classList.toggle('active');
 }
 
+
 function toggleTheme() {
     const root = document.documentElement;
-    const themeIcon = document.getElementById("theme-icon");
+    const themeIcon = document.getElementById('theme-icon');
 
-    if (root.classList.toggle("light-theme")) {
-        themeIcon.textContent = "☀️";
+    if (root.classList.toggle('light-theme')) {
+        themeIcon.textContent = '☀️';
     } else {
-        themeIcon.textContent = "🌙";
+        themeIcon.textContent = '🌙';
     }
 }
