@@ -1,33 +1,35 @@
 :root {
-    --hero-gradient-start: #2c3e50;
-    --hero-gradient-end: #1b2732;
-    --primary-100: #2c3e50;
-    --primary-200: #3e5871;
-    --primary-300: #507192;
-    --accent-100: #c0392b;
-    --accent-200: #c0392b;
-    --accent-300: #c0392b;
-    --background-100: #040608;
-    --background-200: #0d1319;
-    --background-300: #15202a;
-    --text-100: #fdfdfd;
-    --text-200: #f0f0f0;
-    --text-300: #e4e4e4;
+    --hero-gradient-start: #1e1e1e;
+    --hero-gradient-end: #2e2e2e;
+    --primary-100: #1e1e1e;
+    --primary-200: #2e2e2e;
+    --primary-300: #3e3e3e;
+    --accent-100: #ff6f61; /* Laranja claro */
+    --accent-200: #ff4b3e; /* Laranja médio */
+    --accent-300: #ff1a1a; /* Vermelho */
+    --background-100: #1e1e1e;
+    --background-200: #2e2e2e;
+    --background-300: #3e3e3e;
+    --text-100: #dcdcdc; /* Cinza claro */
+    --text-200: #b0b0b0; /* Cinza médio */
+    --text-300: #909090; /* Cinza escuro */
 }
 
 .light-theme {
-    --primary-100: #e2e0e0;
-    --primary-200: #b4b2b2;
-    --primary-300: #bdb9b9;
-    --accent-100: #9ad3bc;
-    --accent-200: #9ad3bc;
-    --accent-300: #9ad3bc;
-    --background-100: #f1ecec;
-    --background-200: #e2e2e2;
-    --background-300: #e5e5e5;
-    --text-100: #111111;
-    --text-200: #464646;
-    --text-300: #5f5f5f;
+    --hero-gradient-start: #d4fcf8;
+    --hero-gradient-end: #a1c4fd;
+    --primary-100: #ffffff;
+    --primary-200: #f0f8ff;
+    --primary-300: #d6eaf8;
+    --accent-100: #a3d5ff;
+    --accent-200: #82c4fa;
+    --accent-300: #61b3f5;
+    --background-100: #f0f8ff;
+    --background-200: #e0f0ff;
+    --background-300: #c0e0ff;
+    --text-100: #2c3e50;
+    --text-200: #3e5871;
+    --text-300: #507192;
 }
 
 /* Estilos Globais */
