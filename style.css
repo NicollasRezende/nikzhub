@@ -701,12 +701,21 @@ footer {
     }
 
     #hero .button-container {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 5px;
     }
 
-    #hero button {
+    #hero .button-container button:nth-child(1),
+    #hero .button-container button:nth-child(2) {
+        width: calc(50% - 2.5px); /* Adjusting for the gap */
+    }
+
+    #hero .button-container button:nth-child(3) {
         width: 100%;
+    }
+
+    #hero button {
         padding: 10px;
     }
 }
