@@ -198,7 +198,7 @@ nav ul li a:hover {
 }
 
 #hero button {
-    padding: 12px 24px;
+    padding: 15px 30px;
     font-size: 1.2em;
     background-color: var(--accent-100);
     border: none;
@@ -211,7 +211,7 @@ nav ul li a:hover {
 }
 
 #hero button:hover {
-    background-color: var(--accent-200);
+    background-color: var(--background-200);
     transform: scale(1.05);
 }
 
@@ -344,7 +344,7 @@ nav ul li a:hover {
 }
 
 .github-btn:hover {
-    background-color: var(--primary-200);
+    background-color: var(--primary-300);
     transform: translateY(-3px);
 }
 
@@ -476,6 +476,7 @@ nav ul li a:hover {
 .nav-button:hover {
     background-color: #e0a800;
 }
+
 .left {
     left: -20px;
 }
